@@ -1,0 +1,25 @@
+basePath: /
+host: localhost:8888
+info:
+  contact:
+    name: hertz-contrib
+    url: https://github.com/hertz-contrib
+  description: This is a demo using Hertz.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: HertzTest
+  version: "1.0"
+paths:
+  /ping:
+    get:
+      consumes:
+      - application/json
+      description: 测试Description
+      produces:
+      - application/json
+      responses: {}
+      summary: 测试Summary
+schemes:
+- http
+swagger: "2.0"
