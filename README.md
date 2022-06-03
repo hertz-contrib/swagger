@@ -1,6 +1,6 @@
 # Hertz-swagger
 
-hertz middleware to automatically generate RESTful API documentation with Swagger 2.0.
+Hertz middleware to automatically generate RESTful API documentation with Swagger 2.0.
 
 ## Usage
 
@@ -94,7 +94,7 @@ import (
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/app/server"
-	hertzSwagger "github.com/hertz-contrib/swagger"
+	swagger "github.com/hertz-contrib/swagger"
 	_ "github.com/hertz-contrib/swagger/example/basic/docs"
 	swaggerFiles "github.com/swaggo/files"
 )
@@ -129,8 +129,8 @@ func main() {
 
 	h.GET("/ping", PingHandler)
 
-	url := hertzSwagger.URL("http://localhost:8888/swagger/doc.json") // The url pointing to API definition
-	h.GET("/swagger/*any", hertzSwagger.WrapHandler(swaggerFiles.Handler, url))
+	url := swagger.URL("http://localhost:8888/swagger/doc.json") // The url pointing to API definition
+	h.GET("/swagger/*any", swagger.WrapHandler(swaggerFiles.Handler, url))
 
 	h.Spin()
 }

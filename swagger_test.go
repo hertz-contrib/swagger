@@ -26,7 +26,7 @@
  * Modifications are Copyright 2022 CloudWeGo Authors.
  */
 
-package hertzSwagger
+package swagger
 
 import (
 	"io/ioutil"
@@ -34,13 +34,11 @@ import (
 	"testing"
 
 	"github.com/cloudwego/hertz/pkg/common/config"
+	"github.com/cloudwego/hertz/pkg/common/test/assert"
 	"github.com/cloudwego/hertz/pkg/common/ut"
 	"github.com/cloudwego/hertz/pkg/route"
-
-	"github.com/swaggo/swag"
-
-	"github.com/cloudwego/hertz/pkg/common/test/assert"
 	swaggerFiles "github.com/swaggo/files"
+	"github.com/swaggo/swag"
 )
 
 type mockedSwag struct{}

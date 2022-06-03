@@ -26,7 +26,7 @@
  * Modifications are Copyright 2022 CloudWeGo Authors.
  */
 
-package hertzSwagger
+package swagger
 
 import (
 	"bytes"
