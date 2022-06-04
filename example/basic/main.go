@@ -33,7 +33,7 @@ import (
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/app/server"
-	swagger "github.com/hertz-contrib/swagger"
+	"github.com/hertz-contrib/swagger"
 	_ "github.com/hertz-contrib/swagger/example/basic/docs"
 	swaggerFiles "github.com/swaggo/files"
 )
