@@ -230,7 +230,7 @@ func CustomWrapHandler(config *Config, handler *webdav.Handler) app.HandlerFunc 
 				ctx.AbortWithStatus(http.StatusInternalServerError)
 				return
 			}
-			if _, err = ctx.Write([]byte(buf.String())); err != nil {
+			if _, err = ctx.Write(buf.Bytes()); err != nil {
 				ctx.AbortWithStatus(http.StatusInternalServerError)
 				return
 			}
