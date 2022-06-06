@@ -1,0 +1,36 @@
+{
+    "schemes": [
+        "http"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a demo using Hertz.",
+        "title": "HertzTest",
+        "contact": {
+            "name": "hertz-contrib",
+            "url": "https://github.com/hertz-contrib"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8888",
+    "basePath": "/",
+    "paths": {
+        "/ping": {
+            "get": {
+                "description": "测试Description",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "测试Summary",
+                "responses": {}
+            }
+        }
+    }
+}
