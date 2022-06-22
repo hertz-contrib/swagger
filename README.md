@@ -1,6 +1,8 @@
-# Hertz-swagger
+# Hertz-swagger(*This is a community driven project*)
 
 Hertz middleware to automatically generate RESTful API documentation with Swagger 2.0.
+
+This repo is forked from [gin-swagger](https://github.com/swaggo/gin-swagger) and adapted to Hertz.
 
 ## Usage
 
