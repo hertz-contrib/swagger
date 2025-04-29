@@ -53,6 +53,7 @@ type swaggerConfig struct {
 	DeepLinking              bool
 	PersistAuthorization     bool
 	Oauth2DefaultClientID    string
+	SyntaxHighlight          bool
 }
 
 // Config stores hertzSwagger configuration variables.
@@ -81,6 +82,7 @@ func (config Config) toSwaggerConfig() swaggerConfig {
 		Title:                 config.Title,
 		PersistAuthorization:  config.PersistAuthorization,
 		Oauth2DefaultClientID: config.Oauth2DefaultClientID,
+		SyntaxHighlight:       config.SyntaxHighlight,
 	}
 }
 
