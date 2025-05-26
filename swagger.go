@@ -53,6 +53,7 @@ type swaggerConfig struct {
 	DeepLinking              bool
 	PersistAuthorization     bool
 	Oauth2DefaultClientID    string
+	SyntaxHighlight          bool
 }
 
 // Config stores hertzSwagger configuration variables.
@@ -66,6 +67,7 @@ type Config struct {
 	DeepLinking              bool
 	PersistAuthorization     bool
 	Oauth2DefaultClientID    string
+	SyntaxHighlight          bool
 }
 
 func (config Config) toSwaggerConfig() swaggerConfig {
@@ -80,6 +82,14 @@ func (config Config) toSwaggerConfig() swaggerConfig {
 		Title:                 config.Title,
 		PersistAuthorization:  config.PersistAuthorization,
 		Oauth2DefaultClientID: config.Oauth2DefaultClientID,
+		SyntaxHighlight:       config.SyntaxHighlight,
+	}
+}
+
+// SyntaxHighlight true, false.
+func SyntaxHighlight(syntaxHighlight bool) func(*Config) {
+	return func(c *Config) {
+		c.SyntaxHighlight = syntaxHighlight
 	}
 }
 
@@ -314,6 +324,7 @@ window.onload = function() {
   // Build a system
   const ui = SwaggerUIBundle({
     url: "{{.URL}}",
+    syntaxHighlight: {{.SyntaxHighlight}},
     dom_id: '#swagger-ui',
     validatorUrl: null,
     oauth2RedirectUrl: {{.Oauth2RedirectURL}},

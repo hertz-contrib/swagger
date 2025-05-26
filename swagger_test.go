@@ -197,3 +197,10 @@ func TestOauth2DefaultClientID(t *testing.T) {
 	configFunc(&cfg)
 	assert.DeepEqual(t, "", cfg.Oauth2DefaultClientID)
 }
+
+func TestSyntaxHighlight(t *testing.T) {
+	var cfg Config
+	expected := true
+	SyntaxHighlight(expected)(&cfg)
+	assert.DeepEqual(t, expected, cfg.SyntaxHighlight)
+}
