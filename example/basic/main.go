@@ -68,7 +68,7 @@ func main() {
 
 	h.GET("/ping", PingHandler)
 
-	url := swagger.URL("http://localhost:8888/swagger/doc.json") // The url pointing to API definition
+	url := swagger.URL("/swagger/doc.json") // The url pointing to API definition
 	h.GET("/swagger/*any", swagger.WrapHandler(swaggerFiles.Handler, url))
 
 	h.Spin()
