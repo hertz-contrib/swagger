@@ -1,6 +1,8 @@
 # Hertz-swagger(*This is a community driven project*)
 
-Hertz middleware to automatically generate RESTful API documentation with Swagger 2.0.
+**Notice**: This project is now archived. For users and those seeking similar functionality, please consider migrate to the official swaggo/swag toolchain using the [Hertz HTTP Adaptor](https://www.cloudwego.io/docs/hertz/tutorials/basic-feature/http-adaptor/).
+
+~~Hertz middleware to automatically generate RESTful API documentation with Swagger 2.0.~~
 
 This repo is forked from [gin-swagger](https://github.com/swaggo/gin-swagger) and adapted to Hertz.
 
