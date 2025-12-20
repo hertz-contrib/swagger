@@ -204,3 +204,17 @@ func TestSyntaxHighlight(t *testing.T) {
 	SyntaxHighlight(expected)(&cfg)
 	assert.DeepEqual(t, expected, cfg.SyntaxHighlight)
 }
+
+func TestURLs(t *testing.T) {
+	var cfg Config
+	
+	URLs([]interface{}{
+		map[string]interface{}{
+			"name": "swagger",
+			"url":  "/swagger/openapi.yaml",
+		},
+	})(&cfg)
+	
+	assert.DeepEqual(t, "swagger", cfg.URLs[0].(map[string]interface{})["name"].(string))
+	assert.DeepEqual(t, "/swagger/openapi.yaml", cfg.URLs[0].(map[string]interface{})["url"].(string))
+}

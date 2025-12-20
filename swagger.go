@@ -45,6 +45,7 @@ import (
 )
 
 type swaggerConfig struct {
+	URLs					 []interface{}
 	URL                      string
 	DocExpansion             string
 	Title                    string
@@ -59,6 +60,7 @@ type swaggerConfig struct {
 // Config stores hertzSwagger configuration variables.
 type Config struct {
 	// The url pointing to API definition (normally swagger.json or swagger.yaml). Default is `doc.json`.
+	URLs					 []interface{}
 	URL                      string
 	DocExpansion             string
 	InstanceName             string
@@ -72,6 +74,7 @@ type Config struct {
 
 func (config Config) toSwaggerConfig() swaggerConfig {
 	return swaggerConfig{
+		URLs:					  config.URLs,
 		URL:                      config.URL,
 		DeepLinking:              config.DeepLinking,
 		DocExpansion:             config.DocExpansion,
@@ -83,6 +86,13 @@ func (config Config) toSwaggerConfig() swaggerConfig {
 		PersistAuthorization:  config.PersistAuthorization,
 		Oauth2DefaultClientID: config.Oauth2DefaultClientID,
 		SyntaxHighlight:       config.SyntaxHighlight,
+	}
+}
+
+// URLs set the url pointing to API definition
+func URLs(urls []interface{}) func(*Config) {
+	return func(c *Config) {
+		c.URLs = urls
 	}
 }
 
@@ -323,6 +333,7 @@ const swaggerIndexTpl = `<!-- HTML for static distribution bundle build -->
 window.onload = function() {
   // Build a system
   const ui = SwaggerUIBundle({
+    urls: {{.URLs}},
     url: "{{.URL}}",
     syntaxHighlight: {{.SyntaxHighlight}},
     dom_id: '#swagger-ui',
@@ -331,6 +342,7 @@ window.onload = function() {
     persistAuthorization: {{.PersistAuthorization}},
     presets: [
       SwaggerUIBundle.presets.apis,
+	  SwaggerUIBundle.presets.specs,
       SwaggerUIStandalonePreset
     ],
     plugins: [
